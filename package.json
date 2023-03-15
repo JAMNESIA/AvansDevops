@@ -1,0 +1,46 @@
+{
+  "name": "avansdevops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "ts-node-esm  src/main.ts",
+    "test": "nyc --reporter=lcov ts-mocha -p tsconfig.json tests/**/*.test.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAMNESIA/AvansDevops.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAMNESIA/AvansDevops/issues"
+  },
+   "dependencies": {
+    "dotenv": "8.2.0",
+    "errorhandler": "1.5.1",
+    "express": "4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "1.17.1",
+    "express-validator": "6.9.2",
+    "nyc": "^15.1.0"
+  },
+  "homepage": "https://github.com/JAMNESIA/AvansDevops#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/errorhandler": "1.5.0",
+    "@types/eslint": "7.2.6",
+    "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "4.14.2",
+    "@typescript-eslint/parser": "4.14.2",
+    "chai": "^4.3.7",
+    "eslint": "7.19.0",
+    "nodemon": "^2.0.7",
+    "sinon": "^15.0.1",
+    "supertest": "6.1.3",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.1.3"
+  }
+}
