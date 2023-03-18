@@ -17,14 +17,16 @@
   "bugs": {
     "url": "https://github.com/JAMNESIA/AvansDevops/issues"
   },
-   "dependencies": {
+  "dependencies": {
     "dotenv": "8.2.0",
     "errorhandler": "1.5.1",
     "express": "4.17.1",
     "express-flash": "0.0.2",
     "express-session": "1.17.1",
     "express-validator": "6.9.2",
-    "nyc": "^15.1.0"
+    "jspdf": "^2.5.1",
+    "nyc": "^15.1.0",
+    "text-to-image": "^5.2.0"
   },
   "homepage": "https://github.com/JAMNESIA/AvansDevops#readme",
   "devDependencies": {
