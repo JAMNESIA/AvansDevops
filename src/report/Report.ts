@@ -1,25 +1,33 @@
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 import { IExportConstructor } from "./interfaces/IExportConstructor";
 
 export class Report {
-    private _title: string;
-    private _content: string;
-
-    constructor(title: string, content: string) {
-        this._title = title;
-        this._content = content;
+    private _header: Header;
+    private _body: string[];
+    private _footer: Footer;
+    
+    public constructor() {
+        this._body = [];
     }
 
-    get title(): string {
-        return this._title;
+    public addContent(content: string): void {
+        this._body.push(content + "\n");
     }
 
-    //ToString
-    toString(): string {
-        return `Title: ${this._title} Content: ${this._content}`;
+    public setHeader(header: Header): void {
+        this._header = header;
     }
 
-    //Export
-    export(exportStrategy: IExportConstructor): void {
+    public setFooter(footer: Footer): void {
+        this._footer = footer;
+    }
+
+    public toString(): string {
+        return this._header.toString() + this._body.toString() + this._footer.toString()
+    }
+ 
+    public export(exportStrategy: IExportConstructor): void {
         new exportStrategy().export(this);
     }
 }

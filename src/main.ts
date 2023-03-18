@@ -1,6 +1,4 @@
-import { Report } from "./report/Report";
-import { ExportPdfStrategy } from "./report/exports/ExportPdfStrategy";
-import { ExportPngStrategy } from "./report/exports/ExportPngStrategy";
+import { ConcreteReportBuilder } from "./report/ConcreteReportBuilder";
 
-const report = new Report("Report Title", "Report Content");
-report.export(ExportPngStrategy);
+const reportBuilder = new ConcreteReportBuilder();
+reportBuilder.produceHeader("Avans", "Avans DevOps", "Sprint 1").produceBody("Sprint 1 150 story points were done.").produceBody("Team members: Jamie Surowiec & Stan Barkmeijer.").produceFooter("1.0.0").producePDF().producePNG();
