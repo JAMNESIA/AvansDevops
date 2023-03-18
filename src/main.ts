@@ -4,4 +4,3 @@ import { ExportPngStrategy } from "./report/exports/ExportPngStrategy";
 
 const report = new Report("Report Title", "Report Content");
 report.export(ExportPngStrategy);
-
