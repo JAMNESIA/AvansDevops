@@ -23,6 +23,18 @@ export class Report {
         this._footer = footer;
     }
 
+    public getBody(): string[] {
+        return this._body;
+    }
+
+    public getHeader(): Header {
+        return this._header;
+    }
+
+    public getFooter(): Footer {
+        return this._footer;
+    }
+
     public toString(): string {
         return this._header.toString() + this._body.toString() + this._footer.toString()
     }
