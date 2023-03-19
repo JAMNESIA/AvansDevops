@@ -1,7 +1,5 @@
 import { ConcreteReportBuilder } from '../../src/report/ConcreteReportBuilder';
 import { Report } from '../../src/report/Report';
-import { assert } from 'chai';
-import { should } from 'chai';
 import { expect } from 'chai';
 import { Header } from '../../src/report/Header';
 import { Footer } from '../../src/report/Footer';
@@ -50,7 +48,7 @@ describe('ConcreteReportBuilder', () => {
         expect(report.getHeader()).to.be.undefined;
         expect(report.getBody()).to.be.empty;
         expect(report.getFooter()).to.be.instanceOf(Footer);
-        expect(report.getFooter().toString()).to.equal(`\nReport generated on: ${new Date().toISOString()} for version: version`);
+        expect(report.getFooter().toString()).to.equal(`\nReport generated on: ${new Date().toLocaleString()} for version: version`);
     }); 
 
     it('should create a report with a header, body and footer', () => {
@@ -60,7 +58,7 @@ describe('ConcreteReportBuilder', () => {
             .produceBody('content')
             .produceFooter('version')
             .getReport();
-        expect(report.getFooter().toString()).to.equal(`\nReport generated on: ${new Date().toISOString()} for version: version`);
+        expect(report.getFooter().toString()).to.equal(`\nReport generated on: ${new Date().toLocaleString()} for version: version`);
         expect(report.getHeader().toString()).to.equal('Company: companyName Project: projectTitle Report: reportTitle\n');
         expect(report.getBody().toString()).to.equal('content\n');
         expect(report.getHeader()).to.not.be.null;

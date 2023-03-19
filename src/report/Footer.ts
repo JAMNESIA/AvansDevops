@@ -8,6 +8,6 @@ export class Footer{
     }
 
     public toString(): string{
-        return "\nReport generated on: " + this._reportDate.toISOString() + " for version: " + this._projectVersion;
+        return "\nReport generated on: " + this._reportDate.toLocaleString() + " for version: " + this._projectVersion;
     }
 }
