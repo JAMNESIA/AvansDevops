@@ -1,10 +1,12 @@
 import { Account } from "../account/Account";
 import { Activity } from "./Activity";
-
-export class BacklogItem extends Activity  {
+import { IBacklogItemState } from "./interfaces/IBacklogItemState";
+import { ToDoState } from "./states/ToDoState";
+export class BacklogItem extends Activity implements IBacklogItemState {
+    //extends activitiy? 
 
     private _activities: Activity[];
-
+    private _state: IBacklogItemState = new ToDoState();
     /**
      * 
      * @param id  - The id of the backlog item
@@ -55,5 +57,28 @@ export class BacklogItem extends Activity  {
             return this._activities;
         }
     }
+    
+    public setToDo() : void{
+        this._state.setToDo();
+    }
 
+    public setDoing() : void{
+        this._state.setDoing();
+    }
+
+    public setReadyForTesting() : void{
+        this._state.setReadyForTesting();
+    }
+
+    public setTesting() : void{
+        this._state.setTesting();
+    }
+
+    public setTested() : void{
+        this._state.setTested();
+    }
+
+    public setDone() : void{
+        this._state.setDone();
+    }
 }
