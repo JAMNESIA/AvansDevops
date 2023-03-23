@@ -12,16 +12,16 @@
 
 ### Epic: Backlog
 
-1. Als gebruiker wil ik een backlog kunnen aanmaken zodat ik daar de requirements van een project kan bewaren.
-1. Als gebruiker wil ik een een backlog item aanmaken die een requirements representeert van een project zodat ik die toe kan voegen aan de backlog.
-1. Als gebruiker wil ik dat binnen een backlog item activeiten aangemaakt kunnen worden zodat meerdere developer aan een backlog item kunnen werken.
-1. Als gebruiker wil ik dat een backlog item is altijd gekoppeld aan een project en maximaal 1 developer zodat het duidelijk is bij wat de taak hoort en wie er aan werkt.
-1. Als gebruiker wil dat wanneer meerdere developers aan een backlog item werken dat er activiteiten zijn binnen het backlog item zijn aangemaakt zodat er duidelijk is welke developer de functionaliteit van de activiteit uitwerken.
-1. Als gebruiker wil ik pas dat een backlog item de status “done” kan hebben als alle activiteiten uit het user story zijn uitgevoerd.
-1. Als gebruiker wil ik dat de statussen todo, doing, ready for testing, testing, tested en done hebben zodat ik weet hoever een backlog item af is.
-1. Als gebruiker wil ik dat wanneer ik een backlog item aanmaak dat het de status todo heeft zodat andere gebruikers weten dat de taak nog gedaan moet worden.
-1. Als gebruiker wil ik dat wanneer een backlog item de status ready for testing of done hebben dat het backlog item terug kan gaan naar todo zodat het item afgemaakt kan worden wanneer het incompleet is.
-1. Als gebruiker wil dat wanneer een backlog item de status tested heeft dat het item terug naar ready for testing kan wanneer het volgens de lead developer nog niet naar de done status mag.
+1. ~~Als gebruiker wil ik een backlog kunnen aanmaken zodat ik daar de requirements van een project kan bewaren.~~
+1. ~~Als gebruiker wil ik een een backlog item aanmaken die een requirements representeert van een project zodat ik die toe kan voegen aan de backlog.~~
+1. ~~Als gebruiker wil ik dat binnen een backlog item activeiten aangemaakt kunnen worden zodat meerdere developer aan een backlog item kunnen werken.~~
+1. ~~Als gebruiker wil ik dat een backlog item is altijd gekoppeld aan een project en maximaal 1 developer zodat het duidelijk is bij wat de taak hoort en wie er aan werkt.~~
+1. ~~Als gebruiker wil dat wanneer meerdere developers aan een backlog item werken dat er activiteiten zijn binnen het backlog item zijn aangemaakt zodat er duidelijk is welke developer de functionaliteit van de activiteit uitwerken.~~
+1. ~~Als gebruiker wil ik pas dat een backlog item de status “done” kan hebben als alle activiteiten uit het user story zijn uitgevoerd.~~
+1. ~~Als gebruiker wil ik dat de statussen todo, doing, ready for testing, testing, tested en done hebben zodat ik weet hoever een backlog item af is.~~
+1. ~~Als gebruiker wil ik dat wanneer ik een backlog item aanmaak dat het de status todo heeft zodat andere gebruikers weten dat de taak nog gedaan moet worden.~~
+1. ~~Als gebruiker wil ik dat wanneer een backlog item de status ready for testing of done hebben dat het backlog item terug kan gaan naar todo zodat het item afgemaakt kan worden wanneer het incompleet is.~~
+1. ~~Als gebruiker wil dat wanneer een backlog item de status tested heeft dat het item terug naar ready for testing kan wanneer het volgens de lead developer nog niet naar de done status mag.~~
 
 ### Epic: Sprint
 
