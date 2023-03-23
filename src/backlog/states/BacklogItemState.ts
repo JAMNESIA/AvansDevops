@@ -1,22 +1,29 @@
+import { BacklogItem } from "../BacklogItem";
 import { IBacklogItemState } from "../interfaces/IBacklogItemState";
 
 export abstract class BacklogItemState implements IBacklogItemState{
-    public setToDo() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+    public _backlogItem : BacklogItem;
+    
+    constructor(backlogItem : BacklogItem){
+        this._backlogItem = backlogItem;
     }
-    public setDoing() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+
+    public setToDo() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
     }
-    public setReadyForTesting() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+    public setDoing() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
     }
-    public setTesting() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+    public setReadyForTesting() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
     }
-    public setTested() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+    public setTesting() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
     }
-    public setDone() : BacklogItemState{
-        throw new Error("InvalidStateExeption: Can't peform action in current state.");
+    public setTested() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
+    }
+    public setDone() : void{
+        throw new Error("InvalidStateException: Can't perform action in current state.");
     }
 }
