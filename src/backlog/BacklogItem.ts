@@ -6,7 +6,7 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     //extends activitiy? 
 
     private _activities: Activity[];
-    private _state: IBacklogItemState = new ToDoState();
+    private _state: IBacklogItemState = new ToDoState(this);
     /**
      * 
      * @param id  - The id of the backlog item
@@ -38,6 +38,10 @@ export class BacklogItem extends Activity implements IBacklogItemState {
         this._activities = value;
     }
 
+    public getState(): IBacklogItemState {
+        return this._state;
+    }
+
     addActivity(activity: Activity): Activity[] {
         if (this._activities.includes(activity)) {
             throw new Error("Activity already exists in this backlog item");
@@ -58,6 +62,18 @@ export class BacklogItem extends Activity implements IBacklogItemState {
         }
     }
     
+    public isDone() : boolean{
+        this._activities.forEach(activity => {
+            if(!activity.done) return false;
+        });
+
+        return true; 
+    }
+
+    public setState(state: IBacklogItemState) : void{
+        this._state = state;
+    }
+
     public setToDo() : void{
         this._state.setToDo();
     }
@@ -79,6 +95,6 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     }
 
     public setDone() : void{
-        this._state.setDone();
+       this._state.setDone();
     }
 }
