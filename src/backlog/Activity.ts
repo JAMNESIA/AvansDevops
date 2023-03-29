@@ -31,11 +31,14 @@ export class Activity {
         this._description = description;
         this._due = due;
         this._done = done;
-
+        this._assignees = [];
+        
         if (assignee) {
-            () => Array.isArray(assignee) 
-                ? this._assignees = assignee
-                : this._assignees.push(assignee);
+            if (Array.isArray(assignee)) {
+                this._assignees = assignee;
+            } else {
+                this._assignees.push(assignee);
+            }
         }
     }
 
