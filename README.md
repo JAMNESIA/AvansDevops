@@ -59,11 +59,11 @@
 
 ### Epic: Forum
 
-1. Als gebruiker wil ik een thread openen op het forum die gerelateerd is aan een backlog item zodat het item gediscussieerd kan worden.
-1. Als gebruiker wil ik een reactie kunnen geven op een thread in het forum zodat ik mee kan doen in de discussie.
-1. Als gebruiker wil ik een reactie kunnen geven op een reactie zodat ik kan discussiëren met een andere gebruiker.
-1. Als gebruiker wil ik dat wanneer het backlog item waar aan de thread aan gerelateerd de status done heeft dat er geen nieuwe berichten in de thread geplaatst kunnen worden zodat het forum relevant blijft.
-1. Als gebruiker wil dat wanneer een backlog item de status done heeft dat er geen threads aangemaakt kunnen worden met dat item zodat het forum relevant blijft. Let erop dat een backlog item in de kolom ‘done’ kan worden geplaatst, maar daar ook weer terug naar ‘todo’ kan, mogelijk gepaard mét of naar aanleiding van een discussie. Dus waarschijnlijk is die status niet voldoende… Bij reacties in de discussie krijgen teamleden een bericht
+1. ~~Als gebruiker wil ik een thread openen op het forum die gerelateerd is aan een backlog item zodat het item gediscussieerd kan worden.~~
+1. ~~Als gebruiker wil ik een reactie kunnen geven op een thread in het forum zodat ik mee kan doen in de discussie.~~
+1. ~~Als gebruiker wil ik een reactie kunnen geven op een reactie zodat ik kan discussiëren met een andere gebruiker.~~
+1. ~~Als gebruiker wil ik dat wanneer het backlog item waar aan de thread aan gerelateerd de status done heeft dat er geen nieuwe berichten in de thread geplaatst kunnen worden zodat het forum relevant blijft.~~
+1. ~~Als gebruiker wil dat wanneer een backlog item de status done heeft dat er geen threads aangemaakt kunnen worden met dat item zodat het forum relevant blijft. Let erop dat een backlog item in de kolom ‘done’ kan worden geplaatst, maar daar ook weer terug naar ‘todo’ kan, mogelijk gepaard mét of naar aanleiding van een discussie. Dus waarschijnlijk is die status niet voldoende… Bij reacties in de discussie krijgen teamleden een bericht~~
 
 ### Epic: Rapport
 
