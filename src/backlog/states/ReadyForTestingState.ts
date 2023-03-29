@@ -8,7 +8,7 @@ export class ReadyForTestingState extends BacklogItemState{
         super(backlogItem);
     }
 
-    public  setToDoState(): void {
+    public setToDo(): void {
         return this._backlogItem.setState(new ToDoState(this._backlogItem));
     }
     

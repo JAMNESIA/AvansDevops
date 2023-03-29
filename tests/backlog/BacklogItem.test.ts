@@ -53,6 +53,41 @@ describe('BacklogItem', () => {
         expect(backlogItem.getState()).to.be.an.instanceOf(DoneState);
     });
 
+    it('should be able to change state to DoneState', () => {
+        backlogItem.setDoing();
+        backlogItem.setReadyForTesting();
+        backlogItem.setTesting();
+        backlogItem.setTested();
+        backlogItem.setDone();
+        expect(backlogItem.getState()).to.be.an.instanceOf(DoneState);
+    });
+
+    it('should be able to change state to ToDoState from Done', () => {
+        backlogItem.setDoing();
+        backlogItem.setReadyForTesting();
+        backlogItem.setTesting();
+        backlogItem.setTested();
+        backlogItem.setDone();
+        backlogItem.setToDo();
+        expect(backlogItem.getState()).to.be.an.instanceOf(ToDoState);
+    });
+
+    it('should be able to change state ToDoState from ReadyForTestingState', () => {
+        backlogItem.setDoing();
+        backlogItem.setReadyForTesting();
+        backlogItem.setToDo();
+        expect(backlogItem.getState()).to.be.an.instanceOf(ToDoState);
+    });
+
+    it('should be able to change state to ReadyForTesting from Tested', () => {
+        backlogItem.setDoing();
+        backlogItem.setReadyForTesting();
+        backlogItem.setTesting();
+        backlogItem.setTested();
+        backlogItem.setReadyForTesting();
+        expect(backlogItem.getState()).to.be.an.instanceOf(ReadyForTestingState);
+    });
+
     // it('should throw an error when trying to change state to ToDoState from ReadyForTestingState', () => {
     //     backlogItem.setReadyForTesting();
     //     expect(() => backlogItem.setToDo()).to.throw(Error('InvalidStateException: Can\'t perform action in current state.'));
