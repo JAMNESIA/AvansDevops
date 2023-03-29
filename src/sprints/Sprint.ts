@@ -17,9 +17,7 @@ export class Sprint {
     private _report: Report;
     
     private _scrumMaster: Account;
-    private _productOwner: Account;
-    private _developers: Account[];
-    private _testers: Account[];
+    private _sprintMembers: Account[]; 
 
     private _pipelineManager: PipelineManager;
 
@@ -32,9 +30,7 @@ export class Sprint {
         startDate: Date,
         endDate: Date,
         scrumMaster: Account,
-        productOwner: Account,
-        developers: Account[],
-        testers: Account[]
+        sprintMembers: Account[]
     ) {
         this._type = type;
         this._name = name;
@@ -42,9 +38,8 @@ export class Sprint {
         this._startDate = startDate;
         this._endDate = endDate;
         this._scrumMaster = scrumMaster;
-        this._productOwner = productOwner;
-        this._developers = developers;
-        this._testers = testers;
+        this._sprintMembers = sprintMembers;
+
     }
 
     public get type(): SprintType {
@@ -75,16 +70,8 @@ export class Sprint {
         return this._scrumMaster;
     }
 
-    public getProductOwner(): Account {
-        return this._productOwner;
-    }
-
-    public getDevelopers(): Account[] {
-        return this._developers;
-    }
-
-    public getTesters(): Account[] {
-        return this._testers;
+    public getSprintMembers(): Account[] {
+        return this._sprintMembers;
     }
 
     public getPipelineManager(): PipelineManager {
@@ -118,4 +105,8 @@ export class Sprint {
     public getReport(): Report {
         return this._report;
     }   
+
+    public addMember(member: Account): void {
+        this._sprintMembers.push(member);
+    }
 }

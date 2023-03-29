@@ -32,14 +32,10 @@ export class Activity {
         this._due = due;
         this._done = done;
 
-        this._assignees = [];
-
         if (assignee) {
-            Array.isArray(assignee) 
-                ? this._assignees = assignee 
+            () => Array.isArray(assignee) 
+                ? this._assignees = assignee
                 : this._assignees.push(assignee);
-        } else {
-            this._assignees = [];
         }
     }
 
