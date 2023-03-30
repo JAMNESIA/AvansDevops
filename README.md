@@ -76,5 +76,5 @@
 
 ### Epic: Project
 
-1. Als gebruiker wil ik een project kunnen aanmaken zodat het uitgevoerd kan worden.
-1. Als gebruiker wil ik de product owner koppelen aan het project zodat wie duidelijk wie die rol vervult.
+1. ~~Als gebruiker wil ik een project kunnen aanmaken zodat het uitgevoerd kan worden.~~
+1. ~~Als gebruiker wil ik de product owner koppelen aan het project zodat wie duidelijk wie die rol vervult.~~
