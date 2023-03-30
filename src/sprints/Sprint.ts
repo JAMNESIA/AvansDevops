@@ -44,6 +44,14 @@ export class Sprint {
             throw new Error("Invalid sprint type");
         }
 
+        if (!name) {
+            throw new Error("Invalid sprint name");
+        }
+
+        if (!scrumMaster) {
+            throw new Error("Invalid scrum master");
+        }
+
         this._type = type;
         this._name = name;
         this._backlog = backlog || new Backlog();
