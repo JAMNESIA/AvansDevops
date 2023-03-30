@@ -126,6 +126,8 @@ export class Sprint {
     }   
 
     public addMember(member: Account): void {
-        this._sprintMembers.push(member);
+        this._sprintMembers.includes(member) 
+            ? null 
+            : this._sprintMembers.push(member);
     }
 }
