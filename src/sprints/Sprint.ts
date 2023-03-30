@@ -23,15 +23,27 @@ export class Sprint {
 
     // private _project: IProject
 
-    constructor(
+    constructor({
+        type,
+        name,
+        backlog,
+        startDate,
+        endDate,
+        scrumMaster,
+        sprintMembers
+    }: {
         type: SprintType,
         name: string,
-        backlog: Backlog,
-        startDate: Date,
-        endDate: Date,
+        backlog?: Backlog,
+        startDate?: Date,
+        endDate?: Date,
         scrumMaster: Account,
-        sprintMembers: Account[]
-    ) {
+        sprintMembers?: Account[]
+    }) {
+        if (!Object.values(SprintType).includes(type)) {
+            throw new Error("Invalid sprint type");
+        }
+
         this._type = type;
         this._name = name;
         this._backlog = backlog || new Backlog();
