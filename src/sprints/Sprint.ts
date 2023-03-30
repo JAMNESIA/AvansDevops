@@ -34,12 +34,11 @@ export class Sprint {
     ) {
         this._type = type;
         this._name = name;
-        this._backlog = backlog;
-        this._startDate = startDate;
-        this._endDate = endDate;
+        this._backlog = backlog || new Backlog();
+        this._startDate = startDate || new Date(); // Now
+        this._endDate = endDate || new Date(Date.now() + 1000 * 60 * 60 * 24 * 7); // 7 days from now
         this._scrumMaster = scrumMaster;
-        this._sprintMembers = sprintMembers;
-
+        this._sprintMembers = sprintMembers || [];
     }
 
     public get type(): SprintType {
