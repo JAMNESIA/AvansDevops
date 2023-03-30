@@ -52,8 +52,8 @@
 
 ### Epic: Pipeline
 
-1. Als gebruiker wil ik dat voor een sprint een release pipeline kan worden gestart zodat de software gereleased kan worden.
-1. Als gebruiker dat een pipeline de volgende acties bevat; Sources, Package, Build, Test, Analyse, Deployen Utility zodat software veilig gereleased kan worden.
+1. ~~Als gebruiker wil ik dat voor een sprint een release pipeline kan worden gestart zodat de software gereleased kan worden.~~
+1. ~~Als gebruiker dat een pipeline de volgende acties bevat; Source, Build, Test, Deploy zodat software veilig gereleased kan worden.~~
 1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de pipeline opnieuw uitgevoerd kan worden.
 1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de pipeline geannuleerd kan worden.
 
