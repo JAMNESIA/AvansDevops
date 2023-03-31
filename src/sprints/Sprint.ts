@@ -23,23 +23,42 @@ export class Sprint {
 
     // private _project: IProject
 
-    constructor(
+    constructor({
+        type,
+        name,
+        backlog,
+        startDate,
+        endDate,
+        scrumMaster,
+        sprintMembers
+    }: {
         type: SprintType,
         name: string,
-        backlog: Backlog,
-        startDate: Date,
-        endDate: Date,
+        backlog?: Backlog,
+        startDate?: Date,
+        endDate?: Date,
         scrumMaster: Account,
-        sprintMembers: Account[]
-    ) {
+        sprintMembers?: Account[]
+    }) {
+        if (!Object.values(SprintType).includes(type)) {
+            throw new Error("Invalid sprint type");
+        }
+
+        if (!name) {
+            throw new Error("Invalid sprint name");
+        }
+
+        if (!scrumMaster) {
+            throw new Error("Invalid scrum master");
+        }
+
         this._type = type;
         this._name = name;
-        this._backlog = backlog;
-        this._startDate = startDate;
-        this._endDate = endDate;
+        this._backlog = backlog || new Backlog();
+        this._startDate = startDate || new Date(); // Now
+        this._endDate = endDate || new Date(Date.now() + 1000 * 60 * 60 * 24 * 7); // 7 days from now
         this._scrumMaster = scrumMaster;
-        this._sprintMembers = sprintMembers;
-
+        this._sprintMembers = sprintMembers || [];
     }
 
     public get type(): SprintType {
@@ -107,6 +126,8 @@ export class Sprint {
     }   
 
     public addMember(member: Account): void {
-        this._sprintMembers.push(member);
+        this._sprintMembers.includes(member) 
+            ? null 
+            : this._sprintMembers.push(member);
     }
 }

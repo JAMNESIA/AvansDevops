@@ -16,9 +16,9 @@ export class Backlog {
      * @param backlogItems  - The backlog items of the backlog
      */
     constructor(
-        id: number,
-        title: string,
-        description: string,
+        id?: number,
+        title?: string,
+        description?: string,
         backlogItems?: BacklogItem[]
     ) {
         this._id = id;
