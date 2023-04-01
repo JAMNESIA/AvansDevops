@@ -23,14 +23,13 @@ export class Activity {
         title: string, 
         description: string, 
         due: Date, 
-        done: boolean = false,
         assignee?: Account | Account[]
     ) {
         this._id = id;
         this._title = title;
         this._description = description;
         this._due = due;
-        this._done = done;
+        this._done = false;
         this._assignees = [];
         
         if (assignee) {
