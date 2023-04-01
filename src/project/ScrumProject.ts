@@ -9,7 +9,7 @@ export class ScrumProject extends Project {
     private _sprints: Sprint[];
     
     constructor(name: string, productOwner?: Account) {
-        super(name, productOwner);
+        super(name, productOwner, "Scrum");
 
         this._backlog = new Backlog();
         this._sprints = [];
