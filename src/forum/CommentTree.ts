@@ -5,8 +5,12 @@ export class CommentTree {
 
     private _root: CommentNode;
 
-    constructor() {
-        this._root = new CommentNode(null);
+    constructor(root: CommentNode) {
+        this._root = root || null;
+    }
+
+    get root(): CommentNode {
+        return this._root;
     }
 
     public getRoot(): CommentNode {

@@ -1,15 +1,20 @@
+import { Account } from "../account/Account";
+
 export class Comment {
 
     private _id: number;
     private _text: string;
-    private _author: string;
+    private _author: Account;
     private _date: Date;
 
-    constructor(id: number, text: string, author: string, date: Date) {
+    constructor(id: number, text: string, author: Account, date?: Date) {
+        if (!text) throw new Error("Text cannot be empty");
+        if (!author) throw new Error("Author cannot be empty");
+
         this._id = id;
         this._text = text;
         this._author = author;
-        this._date = date;
+        this._date = date ? date : new Date();
     }
 
     public getId(): number {
@@ -24,7 +29,7 @@ export class Comment {
         this._text = text;
     }
 
-    public getAuthor(): string {
+    public getAuthor(): Account {
         return this._author;
     }
 

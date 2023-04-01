@@ -5,10 +5,12 @@ export class Project {
     private _id: number;
     private _name: string;
     private _productOwner?: Account;
+    private _type: string;
 
-    constructor(name: string, productOwner?: Account) {
+    constructor(name: string, productOwner?: Account, type?: string) {
         this._name = name;
         this._productOwner = productOwner;
+        this._type = type || "Scrum";
     }
 
 
@@ -22,6 +24,10 @@ export class Project {
 
     getProductOwner(): Account {
         return this._productOwner;
+    }
+
+    getProjectType(): string {
+        return this._type;
     }
 
     setName(name: string): void {

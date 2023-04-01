@@ -59,6 +59,7 @@ export class Sprint {
         this._endDate = endDate || new Date(Date.now() + 1000 * 60 * 60 * 24 * 7); // 7 days from now
         this._scrumMaster = scrumMaster;
         this._sprintMembers = sprintMembers || [];
+        this._pipelineManager = new PipelineManager();
     }
 
     public get type(): SprintType {
@@ -122,7 +123,7 @@ export class Sprint {
     }
 
     public getReport(): Report {
-        return this._report;
+        return this._report || null;
     }   
 
     public addMember(member: Account): void {
