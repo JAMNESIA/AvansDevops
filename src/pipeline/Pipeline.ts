@@ -6,7 +6,7 @@ export class Pipeline extends CompositeComponent {
     private _name: string;
     private _automatic: boolean;
 
-    constructor(name: string, automatic: boolean) {
+    constructor(name: string, automatic: boolean = true) {
         super();
      
         this._name = name;

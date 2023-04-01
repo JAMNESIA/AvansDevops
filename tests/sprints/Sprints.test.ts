@@ -5,6 +5,8 @@ const { LeadDeveloper } = require('../../src/account/LeadDeveloper');
 const { Tester } = require('../../src/account/Tester');
 const { Developer } = require('../../src/account/Developer');
 const { Sprint } = require('../../src/sprints/Sprint');
+const { Pipeline } = require('../../src/pipeline/Pipeline');
+const { Report } = require('../../src/report/Report');
 
 describe('Sprint', () => {
     const sprintMembers = [
@@ -61,6 +63,59 @@ describe('Sprint', () => {
                 scrumMaster: sprintMembers[1],
                 sprintMembers
             })).to.throw('Invalid sprint type'); 
+        });
+
+        // Add report, pipeline and member
+        it('should add a member to the sprint', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            const member = new Developer(111, 't', 'e', 's', 't');
+            sprint.addMember(member);
+            expect(sprint.getSprintMembers().length).to.equal(6);
+        });
+
+        it('should add a pipeline to the sprint', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            const pipeline = new Pipeline('New pipeline');
+            expect(sprint.getPipelineManager().getPipelines().length).to.equal(2);
+            sprint.addPipeline(pipeline);
+            expect(sprint.getPipelineManager().getPipelines().length).to.equal(3);
+        });
+
+        it('should return null when no report is added', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            expect(sprint.getReport()).to.equal(null);
+        });
+
+        it('should add a report to the sprint', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+            
+            const report = new Report();
+            sprint.addReport(report);
+
+            expect(sprint.getReport()).to.equal(report);
         });
     });
 });
