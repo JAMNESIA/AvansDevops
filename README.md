@@ -25,9 +25,9 @@
 
 ### Epic: Sprint
 
-1. Als gebruiker wil ik voor een project een sprint kunnen aanmaken zodat het project met de scrum methodiek uitgevoerd kan worden.
-1. Als gebruiker wil ik dat een sprint doelen kan hebben zoals Feedback of Deployment zodat het duidelijk is wat er die sprint opgeleverd moet worden.
-1. Als gebruiker wil ik dat een sprint een naam, begin- en einddatum heeft zodat de sprint te identificeren is binnen het project
+1. ~~Als gebruiker wil ik voor een project een sprint kunnen aanmaken zodat het project met de scrum methodiek uitgevoerd kan worden.~~
+1. ~~Als gebruiker wil ik dat een sprint doelen kan hebben zoals Feedback of Deployment zodat het duidelijk is wat er die sprint opgeleverd moet worden.~~
+1. ~~Als gebruiker wil ik dat een sprint een naam, begin- en einddatum heeft zodat de sprint te identificeren is binnen het project~~
 1. Als gebruiker wil ik dat wanneer de sprint inactief is er geen backlog items aan de sprint toegevoegd kan worden en backlog items worden gewijzigd zodat de sprint data compleet blijft.
 1. Als gebruiker wil ik wanneer een sprint is afgelopen krijgt deze de status finished zodat we weten dat de sprint is afgelopen.
 1. Als gebruiker wil ik dat wanneer een feedback sprint klaar is dat er een sprint review kan worden gestart zodat de sprint geëvalueerd kan worden.
@@ -36,8 +36,8 @@
 1. Als gebruiker wil ik dat de sprint niet gewijzigd kan worden als de acties van de pipeline aan het draaien zijn.
 1. Als gebruiker wil ik dat een sprint pas de status gefinished krijgt wanneer alle acties van de pipeline succesvol zijn uitgevoerd.
 1. Als gebruiker wil ik dat een sprint alleen afgesloten kan worden wanneer de Scrum Master document met de sprint samenvatting heeft geupload.
-1. Als gebruiker wil ik gebruikers toevoegen aan een sprint.
-1. Als gebruiker wil ik maximaal 1 Scrum Master koppelen aan een sprint zodat het duidelijk is wie die rol vervult.
+1. ~~Als gebruiker wil ik gebruikers toevoegen aan een sprint.~~
+1. ~~Als gebruiker wil ik maximaal 1 Scrum Master koppelen aan een sprint zodat het duidelijk is wie die rol vervult.~~
 
 ### Epic: Notificatie
 
@@ -52,8 +52,8 @@
 
 ### Epic: Pipeline
 
-1. Als gebruiker wil ik dat voor een sprint een release pipeline kan worden gestart zodat de software gereleased kan worden.
-1. Als gebruiker dat een pipeline de volgende acties bevat; Sources, Package, Build, Test, Analyse, Deployen Utility zodat software veilig gereleased kan worden.
+1. ~~Als gebruiker wil ik dat voor een sprint een release pipeline kan worden gestart zodat de software gereleased kan worden.~~
+1. ~~Als gebruiker dat een pipeline de volgende acties bevat; Source, Build, Test, Deploy zodat software veilig gereleased kan worden.~~
 1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de pipeline opnieuw uitgevoerd kan worden.
 1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de pipeline geannuleerd kan worden.
 

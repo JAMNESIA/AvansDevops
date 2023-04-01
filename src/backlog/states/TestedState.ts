@@ -13,6 +13,10 @@ export class TestedState extends BacklogItemState{
     }
 
     public setDone(): void {
-        return this._backlogItem.setState(new DoneState(this._backlogItem));
+        if(this._backlogItem.isDone()){
+            return this._backlogItem.setState(new DoneState(this._backlogItem));
+        }else{
+            throw new Error("Not all activities are done"); 
+        }
     } 
 }

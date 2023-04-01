@@ -1,4 +1,6 @@
 export enum SprintType {
     RELEASE = 'RELEASE',
-    REVIEW = 'REVIEW'
+    REVIEW = 'REVIEW',
+    FEEDBACK = 'FEEDBACK',
+    DEPLOYMENT = 'DEPLOYMENT',
 }

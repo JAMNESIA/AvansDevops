@@ -22,20 +22,15 @@ export class BacklogItem extends Activity implements IBacklogItemState {
         title: string,
         description: string,
         due: Date,
-        done: boolean = false,
         assignee?: Account | Account[],
         activities?: Activity[]
     ) {
-        super(id, title, description, due, done, assignee);
+        super(id, title, description, due, assignee);
         this._activities = activities ? activities : [];
     }
 
-    get activities(): Activity[] {
+    public getActivities(): Activity[] {
         return this._activities;
-    }
-
-    set activities(value: Activity[]) {
-        this._activities = value;
     }
 
     public getState(): IBacklogItemState {
@@ -63,11 +58,12 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     }
     
     public isDone() : boolean{
+        let bool = true; 
         this._activities.forEach(activity => {
-            if(!activity.done) return false;
+            if(!activity.done) bool = false;
         });
 
-        return true; 
+        return bool; 
     }
 
     public setState(state: IBacklogItemState) : void{
@@ -95,6 +91,6 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     }
 
     public setDone() : void{
-       this._state.setDone();
+        this._state.setDone();
     }
 }

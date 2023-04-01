@@ -51,10 +51,6 @@ export class Backlog {
         return this._backlogItems;
     }
 
-    set backlogItems(value: BacklogItem[]) {
-        this._backlogItems = value;
-    }
-
     addBacklogItem(backlogItem: BacklogItem) {
         if (this._backlogItems.includes(backlogItem)) {
             throw new Error("Backlog item already exists in backlog");
@@ -74,15 +70,4 @@ export class Backlog {
             return this._backlogItems;
         }
     }
-
-    addActivityToBacklogItem(backlogItem: BacklogItem, activity: Activity) {
-        if (this._backlogItems.includes(backlogItem) && !backlogItem.activities.includes(activity)) {
-            backlogItem.addActivity(activity);
-
-            return backlogItem.activities;
-        } else {
-            throw new Error("Backlog item does not exist in backlog");
-        }
-    }
-
 }

@@ -1,7 +1,6 @@
 import { BacklogItem } from "../backlog/BacklogItem";
 import { Account } from "../account/Account";
 import { CommentTree } from "./CommentTree";
-import  { CommentNode } from "./CommentNode";
 import { Comment } from "./Comment";
 import { DoneState } from "../backlog/states/DoneState";
 
