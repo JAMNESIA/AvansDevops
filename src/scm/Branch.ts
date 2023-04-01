@@ -13,6 +13,9 @@ export class Branch {
      * @param commits  - The commits of the branch
      */
     constructor(id: number, name: string, commits: Commit[] = []) {
+        if (!name || name.length === 0) throw new Error("Name cannot be empty");
+        if (!commits || commits.length === 0) throw new Error("Commits cannot be null");
+
         this._id = id;
         this._name = name;
         this._commits = commits;

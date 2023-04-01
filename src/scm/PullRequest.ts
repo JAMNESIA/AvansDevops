@@ -18,6 +18,11 @@ export class PullRequest {
      * @param targetBranch  
      */
     constructor(id: number, title: string, description: string, sourceBranch: Branch, targetBranch: Branch) {
+        if (!title || title.length === 0) throw new Error("Title cannot be empty");
+        if (!description || description.length === 0) throw new Error("Description cannot be empty");
+        if (!sourceBranch) throw new Error("Source branch cannot be null");
+        if (!targetBranch) throw new Error("Target branch cannot be null");
+        
         this._id = id;
         this._title = title;
         this._description = description;
@@ -49,8 +54,16 @@ export class PullRequest {
         return this._sourceBranch;
     }
 
+    set sourceBranch(value: Branch) {
+        this._sourceBranch = value;
+    }
+
     get targetBranch(): Branch {
         return this._targetBranch;
+    }
+
+    set targetBranch(value: Branch) {
+        this._targetBranch = value;
     }
 
 }
