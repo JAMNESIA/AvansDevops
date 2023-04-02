@@ -12,7 +12,7 @@ describe("Project", () => {
         let project;
 
         beforeEach(() => {
-            project = new Project("Test Project", productOwner); 
+            project = new ScrumProject("Test Project", productOwner); 
         });
 
         it("should have a name", () => {
@@ -24,6 +24,7 @@ describe("Project", () => {
         });
 
         it("should have a project type", () => {
+            console.log(project.getProjectType());
             expect(project.getProjectType()).to.equal("Scrum");
         });
 
