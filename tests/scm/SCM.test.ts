@@ -65,6 +65,22 @@ describe('SCM', () => {
 
             expect(branch.name).to.equal('New branch name');
         });
+
+        it('should throw an error when setting an empty name', () => {
+            expect(() => new Branch(1, '', commits)).to.throw("Name cannot be empty");
+        });
+
+        it('should throw an error when setting an no name', () => {
+            expect(() => new Branch(1, )).to.throw("Name cannot be empty");
+        });
+
+        it('should throw error with empty commits', () => {
+            expect(() => new Branch(1, 'Branch name', [])).to.throw("Commits cannot be null");
+        });
+
+        it('should throw error with no commits', () => {
+            expect(() => new Branch(1, 'Branch name')).to.throw("Commits cannot be null");
+        });
     });
 
     describe('PullRequest', () => {

@@ -35,6 +35,8 @@ export class CommentTree {
 
         if (node) {
             node.getParent().removeChild(node);
+        }else{
+            throw new Error('Comment not found');
         }
     }
 

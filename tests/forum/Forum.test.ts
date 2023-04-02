@@ -156,6 +156,12 @@ describe('Forum', () => {
             expect(commentNode.children.length).to.equal(1);
         });
 
+        it('should throw error if node is not found', () => {
+            let childComment = new Comment(2, 'content', author, new Date());
+            let childCommentNode = new CommentNode(childComment);
+            expect(() => commentNode.removeChild(childCommentNode)).to.throw('Child not found');
+        });
+
         it('should get children', () => {
             let childComment = new Comment(2, 'content', author, new Date());
             let childCommentNode = new CommentNode(childComment);
@@ -233,6 +239,11 @@ describe('Forum', () => {
             commentTree = new CommentTree(commentNode);
             commentTree.removeComment(comment2);
             expect(commentTree.root.children).to.have.length(1);
+        });
+
+        it('should throw error if comment is not found in tree while removing', () => {
+            commentTree = new CommentTree(commentNode);
+            expect(() => commentTree.removeComment(comment4)).to.throw('Comment not found'); 
         });
 
         it('should log a comment tree to the console', () => {

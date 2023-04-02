@@ -34,6 +34,19 @@ describe('Sprint', () => {
             expect(sprint instanceof Sprint).to.equal(true);
         });
 
+        it('should make sprint with no members', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+            });
+            expect(sprint.name).to.equal('name');
+            expect(sprint.getSprintMembers().length).to.equal(0);
+            expect(sprint.type).to.equal('RELEASE');
+            expect(sprint.getScrumMaster()).to.equal(sprintMembers[1]);
+            expect(sprint instanceof Sprint).to.equal(true);
+        });
+
         it('should throw an error when no scrum master is provided', () => {
             expect(() => new Sprint({
                 type: "RELEASE",
