@@ -12,27 +12,27 @@ export class ReleaseCancelledState implements ISprintState {
     }
     
     changeToInitialState(): void {
-        throw new Error(CANCELLED);
+        throw new Error(this._CANCELLED);
     }
 
     changeToInProgressState(): void {
-        throw new Error(CANCELLED);
+        throw new Error(this._CANCELLED);
     }
 
     changeToFinishedState(): void {
-        throw new Error(CANCELLED);
+        throw new Error(this._CANCELLED);
     }
 
     changeToReleasingState(): void {
-        throw new Error(CANCELLED);
+        throw new Error(this._CANCELLED);
     }
 
     changeToReleasedState(): void {
-        throw new Error(CANCELLED);
+        throw new Error(this._CANCELLED);
     }
 
     changeToReleaseCancelledState(): void {
-        throw new Error(CANCELLED);
+        throw new Error('Can\'t change from release cancelled to release cancelled');
     }
 
 }
