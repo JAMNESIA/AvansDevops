@@ -7,6 +7,8 @@ const { Developer } = require('../../src/account/Developer');
 const { Sprint } = require('../../src/sprints/Sprint');
 const { Pipeline } = require('../../src/pipeline/Pipeline');
 const { Report } = require('../../src/report/Report');
+const { Backlog } = require('../../src/backlog/Backlog');
+const { PipelineManager } = require('../../src/pipeline/PipelineManager');
 
 describe('Sprint', () => {
     const sprintMembers = [
@@ -116,6 +118,100 @@ describe('Sprint', () => {
             sprint.addReport(report);
 
             expect(sprint.getReport()).to.equal(report);
+        });
+
+        it('should set the sprint state', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            sprint.setState('ACTIVE');
+            expect(sprint.getState()).to.equal('ACTIVE');
+        }); 
+
+        it('should get the state of the sprint', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            sprint.setState('ACTIVE');
+            expect(sprint.getState()).to.equal('ACTIVE');
+        });
+
+        it('should get the sprint type', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            expect(sprint.getType()).to.equal('RELEASE');
+        });
+
+        it('should get the backlog', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            expect(sprint.getBacklogItems()).to.be.instanceof(Backlog);
+        })
+
+        it('should throw error adding the same member twice', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            const member = new Developer(111, 't', 'e', 's', 't');
+            sprint.addMember(member);
+            expect(() => sprint.addMember(member)).to.throw('Member already exists');
+        });
+
+        it('should get start date', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            expect(sprint.getStartDate()).to.instanceof(Date);
+        });
+
+        it('should get end date', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            expect(sprint.getEndDate()).to.instanceof(Date);
+        }); 
+
+        it('should set a pipeline manager', () => {
+            const sprint = new Sprint({
+                type: "RELEASE",
+                name: "name",
+                scrumMaster: sprintMembers[1],
+                sprintMembers
+            });
+
+            const pipelineManager = new PipelineManager();
+            sprint.setPipelineManager(pipelineManager);
+            expect(sprint.getPipelineManager()).to.equal(pipelineManager); 
         });
     });
 });

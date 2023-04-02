@@ -4,10 +4,8 @@ import { Sprint } from "../sprints/Sprint";
 
 export abstract class Project {
 
-    private _id: number;
     private _name: string;
     private _productOwner?: Account;
-    private _type: string;
     private _backlog: Backlog;
     private _sprints: Sprint[];
     
@@ -30,9 +28,6 @@ export abstract class Project {
         return this._sprints;
     }
 
-    set sprints(value: Sprint[]) {
-        this._sprints = value;
-    }
 
     addSprint(sprint: Sprint) {
         this._sprints.push(sprint);
@@ -42,20 +37,12 @@ export abstract class Project {
         this._sprints = this._sprints.filter(s => s !== sprint);
     }
 
-    getId(): number {
-        return this._id;
-    }
-
     getName(): string {
         return this._name;
     }
 
     getProductOwner(): Account {
         return this._productOwner;
-    }
-
-    getProjectType(): string {
-        return this._type;
     }
 
     setName(name: string): void {

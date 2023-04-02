@@ -102,10 +102,6 @@ export class Sprint {
         this._pipelineManager = pipelineManager;
     }
 
-    public set state(state: ISprintState) {
-        this._state = state;
-    }
-
     public setState(state: ISprintState): void {
         this._state = state;
     }

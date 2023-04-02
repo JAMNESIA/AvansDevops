@@ -4,7 +4,7 @@ const { ProductOwner } = require("../../src/account/ProductOwner");
 const { ProjectFactory } = require("../../src/project/ProjectFactory");
 const { KanbanProject } = require("../../src/project/KanbanProject");
 const { ScrumProject } = require("../../src/project/ScrumProject");
-
+const { Backlog } = require("../../src/backlog/Backlog");
 describe("Project", () => {
     const productOwner = new ProductOwner(1, "TestPerson", "test@test.test", "0612345678", "testr");
     
@@ -24,7 +24,6 @@ describe("Project", () => {
         });
 
         it("should have a project type", () => {
-            console.log(project.getProjectType());
             expect(project.getProjectType()).to.equal("Scrum");
         });
 
@@ -38,6 +37,25 @@ describe("Project", () => {
 
             project.setProductOwner(newProductOwner);
             expect(project.getProductOwner()).to.equal(newProductOwner);
+        });
+        
+        it("should be able to set a backlog", () => {
+            const backlog = new Backlog(1, 'title', 'description');
+            project.backlog = backlog;
+            expect(project.backlog).to.equal(backlog);
+        });
+
+        it("should be able to add a sprint", () => {
+            const sprint = { id: 1, name: "Sprint 1", startDate: new Date(), endDate: new Date() };
+            project.addSprint(sprint);
+            expect(project.sprints).to.include(sprint);
+        });
+
+        it("should be able to remove a sprint", () => {
+            const sprint = { id: 1, name: "Sprint 1", startDate: new Date(), endDate: new Date() };
+            project.addSprint(sprint);
+            project.removeSprint(sprint);
+            expect(project.sprints).to.not.include(sprint);
         });
     });
 
