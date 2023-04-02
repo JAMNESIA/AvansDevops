@@ -5,8 +5,12 @@ export class CommentTree {
 
     private _root: CommentNode;
 
-    constructor() {
-        this._root = new CommentNode(null);
+    constructor(root: CommentNode) {
+        this._root = root || null;
+    }
+
+    get root(): CommentNode {
+        return this._root;
     }
 
     public getRoot(): CommentNode {
@@ -19,8 +23,11 @@ export class CommentTree {
 
     public addComment(comment: Comment): void {
         let node = new CommentNode(comment);
-
-        this._root.addChild(node);
+        if(this.getRoot() === null) {
+            this._root = node;
+        }else{
+            this._root.addChild(node);
+        }
     }
 
     public removeComment(comment: Comment): void {
@@ -28,6 +35,8 @@ export class CommentTree {
 
         if (node) {
             node.getParent().removeChild(node);
+        }else{
+            throw new Error('Comment not found');
         }
     }
 

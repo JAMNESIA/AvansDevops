@@ -291,7 +291,6 @@ describe('BacklogItem', () => {
         backlogItem.setReadyForTesting();
         backlogItem.setTesting();
         backlogItem.setTested();
-        console.log(backlogItem.isDone());
         expect(() => backlogItem.setDone()).to.throw("Not all activities are done");
     });
 

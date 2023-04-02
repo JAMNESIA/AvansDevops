@@ -12,6 +12,9 @@ export class Commit {
      * @param files  - The files of the commit 
      */
     constructor(id: number, message: string, files: string[]) {
+        if (!message || message.length === 0) throw new Error("Message cannot be empty");
+        if (!files || files.length === 0) throw new Error("Files cannot be empty");
+
         this._id = id;
         this._message = message;
         this.files = files;

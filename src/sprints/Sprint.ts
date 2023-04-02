@@ -59,6 +59,7 @@ export class Sprint {
         this._endDate = endDate || new Date(Date.now() + 1000 * 60 * 60 * 24 * 7); // 7 days from now
         this._scrumMaster = scrumMaster;
         this._sprintMembers = sprintMembers || [];
+        this._pipelineManager = new PipelineManager();
     }
 
     public get type(): SprintType {
@@ -101,10 +102,6 @@ export class Sprint {
         this._pipelineManager = pipelineManager;
     }
 
-    public set state(state: ISprintState) {
-        this._state = state;
-    }
-
     public setState(state: ISprintState): void {
         this._state = state;
     }
@@ -122,12 +119,14 @@ export class Sprint {
     }
 
     public getReport(): Report {
-        return this._report;
+        return this._report || null;
     }   
 
     public addMember(member: Account): void {
-        this._sprintMembers.includes(member) 
-            ? null 
-            : this._sprintMembers.push(member);
+        if (!this._sprintMembers.includes(member)) {
+            this._sprintMembers.push(member);
+        }else{
+            throw new Error("Member already exists");
+        }
     }
 }

@@ -7,13 +7,23 @@ export class CommentNode {
     private _parent: CommentNode;
 
     constructor(comment: Comment) {
+        if (!comment) throw new Error("Comment cannot be empty");
+
         this._comment = comment;
 
         this._children = [];
         this._parent = null;
     }
 
+    get children(): CommentNode[] {
+        return this._children;
+    }
+
     public getComment(): Comment {
+        return this._comment;
+    }
+
+    get comment(): Comment {
         return this._comment;
     }
     
@@ -36,6 +46,8 @@ export class CommentNode {
         let index = this._children.indexOf(child);
         if (index > -1) {
             this._children.splice(index, 1);
+        }else{
+            throw new Error('Child not found');
         }
     }
 
