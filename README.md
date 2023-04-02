@@ -1,5 +1,9 @@
 # AvansDevops
 
+## SonarCloud
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sofa3-avans_avans-devops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sofa3-avans_avans-devops)
+
 ## Functionals
 
 ### Epic: Account
