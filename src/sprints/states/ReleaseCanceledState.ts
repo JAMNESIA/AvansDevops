@@ -1,4 +1,3 @@
-import { CANCELLED } from "dns";
 import { Sprint } from "../Sprint";
 import { ISprintState } from "./ISprintState";
 
