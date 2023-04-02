@@ -1,14 +1,11 @@
-import { Publisher } from '../notification/Publisher';
 import { Pipeline } from './Pipeline';
 import { PipelineVisitor } from './PipelineVisitor';
-import { Subscriber } from '../notification/Subscriber';
 import { Stage } from './Stage';
 import { Command } from './Command';
 
-export class PipelineManager implements Publisher {
+export class PipelineManager {
 
     private _pipelines: Pipeline[] = [];
-    private _subscribers: Subscriber[] = [];
 
     constructor() {
         this.addPipeline(this.generateDefaultDeployPipeline());
@@ -30,18 +27,6 @@ export class PipelineManager implements Publisher {
     public executePipeline(index: number): void {
         this._pipelines[index]
             .acceptVisitor(new PipelineVisitor());
-    }
-
-    public subscribe(subscriber: Subscriber): void {
-        this._subscribers.push(subscriber);
-    }
-
-    public unsubscribe(subscriber: Subscriber): void {
-        this._subscribers = this._subscribers.filter(s => s !== subscriber);
-    }
-
-    public notifySubscribers(message: string): void {
-        this._subscribers.forEach(s => s.update(message));
     }
 
     private generateBasePipeline(name: string): Pipeline {
