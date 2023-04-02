@@ -1,4 +1,3 @@
-import { Activity } from "./Activity";
 import { BacklogItem } from "./BacklogItem";
 
 export class Backlog {

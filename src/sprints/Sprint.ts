@@ -127,8 +127,10 @@ export class Sprint {
     }   
 
     public addMember(member: Account): void {
-        this._sprintMembers.includes(member) 
-            ? null 
-            : this._sprintMembers.push(member);
+        if (!this._sprintMembers.includes(member)) {
+            this._sprintMembers.push(member);
+        }else{
+            throw new Error("Member already exists");
+        }
     }
 }
