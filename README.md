@@ -41,10 +41,9 @@
 
 ### Epic: Notificatie
 
-1. Als gebruiker wil ik dat wanneer een backlog item de status ready for testing heeft dat testers een notificatie krijgen zodat de backlog item getest kan worden.
-1. Wanneer een backlog item terug naar todo gaat krijgt de Scrum Master een notificatie zodat hij de developer hierop kan aanspreken.
-1. Als gebruiker wil ik een notificatie kunnen sturen als email zodat de ontvanger het in zijn email heeft.
-1. Als gebruiker wil ik de notificatie versturen als slack bericht zodat de ontvanger het kan versturen in slack.
+1. ~~ Als gebruiker wil ik dat wanneer een backlog item de status ready for testing heeft dat testers een notificatie krijgen zodat de backlog item getest kan worden. ~~
+1. ~~Als gebruiker wil ik een notificatie kunnen sturen als email zodat de ontvanger het in zijn email heeft. ~~
+1. ~~ Als gebruiker wil ik de notificatie versturen als slack bericht zodat de ontvanger het kan versturen in slack. ~~
 1. Als gebruiker wil ik dat wanneer een release pipeline wordt geannuleerd dat de Product Owner een notificatie krijgt via mail en slack.
 1. Als gebruiker wil ik dat wanneer de pipeline is geslaagd en de sprint is gesloten er een notificatie wordt gestuurd naar scrum master en de product owner wordt gestuurd zodat hun op de hoogte worden gesteld.
 1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de scrum master een notificatie krijgt zodat hij op de hoogte wordt gesteld.
