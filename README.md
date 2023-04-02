@@ -28,26 +28,26 @@
 1. ~~Als gebruiker wil ik voor een project een sprint kunnen aanmaken zodat het project met de scrum methodiek uitgevoerd kan worden.~~
 1. ~~Als gebruiker wil ik dat een sprint doelen kan hebben zoals Feedback of Deployment zodat het duidelijk is wat er die sprint opgeleverd moet worden.~~
 1. ~~Als gebruiker wil ik dat een sprint een naam, begin- en einddatum heeft zodat de sprint te identificeren is binnen het project~~
-1. Als gebruiker wil ik dat wanneer de sprint inactief is er geen backlog items aan de sprint toegevoegd kan worden en backlog items worden gewijzigd zodat de sprint data compleet blijft.
-1. Als gebruiker wil ik wanneer een sprint is afgelopen krijgt deze de status finished zodat we weten dat de sprint is afgelopen.
-1. Als gebruiker wil ik dat wanneer een feedback sprint klaar is dat er een sprint review kan worden gestart zodat de sprint geëvalueerd kan worden.
-1. Als gebruiker wil dat wanneer een deployment sprint is afgelopen dat er een release pipeline wordt gestart wanneer de resultaten goed genoeg zijn.
-1. Als gebruiker wil ik dat bij een deployment sprint de release kan worden geannuleerd wanneer de resultaten van de sprint niet goed zijn.
-1. Als gebruiker wil ik dat de sprint niet gewijzigd kan worden als de acties van de pipeline aan het draaien zijn.
-1. Als gebruiker wil ik dat een sprint pas de status gefinished krijgt wanneer alle acties van de pipeline succesvol zijn uitgevoerd.
-1. Als gebruiker wil ik dat een sprint alleen afgesloten kan worden wanneer de Scrum Master document met de sprint samenvatting heeft geupload.
+1. ~~Als gebruiker wil ik dat wanneer de sprint inactief is er geen backlog items aan de sprint toegevoegd kan worden en backlog items worden gewijzigd zodat de sprint data compleet blijft.~~
+1. ~~Als gebruiker wil ik wanneer een sprint is afgelopen krijgt deze de status finished zodat we weten dat de sprint is afgelopen.~~
+1. ~~Als gebruiker wil ik dat wanneer een feedback sprint klaar is dat er een sprint review kan worden gestart zodat de sprint geëvalueerd kan worden.~~
+1. ~~Als gebruiker wil dat wanneer een deployment sprint is afgelopen dat er een release pipeline wordt gestart wanneer de resultaten goed genoeg zijn.~~
+1. ~~Als gebruiker wil ik dat bij een deployment sprint de release kan worden geannuleerd wanneer de resultaten van de sprint niet goed zijn.~~
+1. ~~Als gebruiker wil ik dat de sprint niet gewijzigd kan worden als de acties van de pipeline aan het draaien zijn.~~
+1. ~~Als gebruiker wil ik dat een sprint pas de status gefinished krijgt wanneer alle acties van de pipeline succesvol zijn uitgevoerd.~~
+1. ~~Als gebruiker wil ik dat een sprint alleen afgesloten kan worden wanneer de Scrum Master document met de sprint samenvatting heeft geupload.~~
 1. ~~Als gebruiker wil ik gebruikers toevoegen aan een sprint.~~
 1. ~~Als gebruiker wil ik maximaal 1 Scrum Master koppelen aan een sprint zodat het duidelijk is wie die rol vervult.~~
 
 ### Epic: Notificatie
 
-1. ~~ Als gebruiker wil ik dat wanneer een backlog item de status ready for testing heeft dat testers een notificatie krijgen zodat de backlog item getest kan worden. ~~
-1. ~~Als gebruiker wil ik een notificatie kunnen sturen als email zodat de ontvanger het in zijn email heeft. ~~
-1. ~~ Als gebruiker wil ik de notificatie versturen als slack bericht zodat de ontvanger het kan versturen in slack. ~~
-1. Als gebruiker wil ik dat wanneer een release pipeline wordt geannuleerd dat de Product Owner een notificatie krijgt via mail en slack.
-1. Als gebruiker wil ik dat wanneer de pipeline is geslaagd en de sprint is gesloten er een notificatie wordt gestuurd naar scrum master en de product owner wordt gestuurd zodat hun op de hoogte worden gesteld.
-1. Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de scrum master een notificatie krijgt zodat hij op de hoogte wordt gesteld.
-1. Als gebruiker wil ik dat wanneer iemand op mijn bericht heeft gereageerd op het forum dat ik een notificatie krijg.
+1. ~~Als gebruiker wil ik dat wanneer een backlog item de status ready for testing heeft dat testers een notificatie krijgen zodat de backlog item getest kan worden.~~
+1. ~~Als gebruiker wil ik een notificatie kunnen sturen als email zodat de ontvanger het in zijn email heeft.~~
+1. ~~Als gebruiker wil ik de notificatie versturen als slack bericht zodat de ontvanger het kan versturen in slack.~~
+1. ~~Als gebruiker wil ik dat wanneer een release pipeline wordt geannuleerd dat de Product Owner een notificatie krijgt via mail en slack.~~
+1. ~~Als gebruiker wil ik dat wanneer de pipeline is geslaagd en de sprint is gesloten er een notificatie wordt gestuurd naar scrum master en de product owner wordt gestuurd zodat hun op de hoogte worden gesteld.~~
+1. ~~Als gebruiker wil ik dat wanneer een actie van de pipeline faalt dat de scrum master een notificatie krijgt zodat hij op de hoogte wordt gesteld.~~
+1. ~~Als gebruiker wil ik dat wanneer iemand op mijn bericht heeft gereageerd op het forum dat ik een notificatie krijg.~~
 
 ### Epic: Pipeline
 
