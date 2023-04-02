@@ -5,9 +5,80 @@ const { CommentTree } = require('../../src/forum/CommentTree');
 const { Thread } = require('../../src/forum/Thread');
 const { BacklogItem } = require('../../src/backlog/BacklogItem');
 const { Account } = require('../../src/account/Account');
+const { ReadyForTestingState } = require ('../../src/backlog/states/ReadyForTestingState');
+const { TestingState } = require ('../../src/backlog/states/TestingState');
+const { TestedState } = require ('../../src/backlog/states/TestedState');
+const { DoneState } = require ('../../src/backlog/states/DoneState');
+const { DoingState } = require ('../../src/backlog/states/DoingState');
 
 describe('Forum', () => {
     let author = new Account(1, 'name', 'email', 'phonenumber', 'slack');
+    
+    describe('Thread', () => {
+        describe('Constructor', () => {
+            it('should create a thread', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                expect(thread.getId()).to.equal(1);
+                expect(thread.getTitle()).to.equal('title');
+                expect(thread.getDescription()).to.equal('description');
+                expect(thread.getBacklogItem()).to.equal(backlogItem);
+                expect(thread.getOriginalPoster()).to.equal(author);
+            });
+
+            it('should throw an error when backlog item has done state', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                backlogItem.setDoing();
+                backlogItem.setReadyForTesting();
+                backlogItem.setTesting();
+                backlogItem.setTested();
+                backlogItem.setDone();
+                expect(() => new Thread(1, 'title', 'description', backlogItem, author)).to.throw('Backlog item is done');
+            });
+
+            it('should set title', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                thread.setTitle('new title');
+                expect(thread.getTitle()).to.equal('new title');
+            });
+
+            it('should set description', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                thread.setDescription('new description');
+                expect(thread.getDescription()).to.equal('new description');
+            });
+
+            it('should get comments', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                expect(thread.getComments()).to.be.an.instanceof(CommentTree);
+            });
+
+            it('should add comment', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                const comment = new Comment(1, 'content', author, new Date());
+                console.log(comment);
+                thread.addComment(comment);
+      
+                expect(thread.getComments().getRoot().getComment()).to.equal(comment);
+            });
+
+            it('should throw an error when adding comment while backlog item has done state', () => {
+                const backlogItem = new BacklogItem(1, 'title', 'description', author, new Date(), 1);
+                backlogItem.setDoing();
+                backlogItem.setReadyForTesting();
+                backlogItem.setTesting();
+                backlogItem.setTested();
+                const thread = new Thread(1, 'title', 'description', backlogItem, author);
+                backlogItem.setDone();
+                const comment = new Comment(1, 'content', author, new Date());
+                expect(() => thread.addComment(comment)).to.throw('Backlog item is done');
+            });
+        });
+    });
 
     describe('Comment', () => {
         it('should create a comment', () => {
@@ -85,6 +156,12 @@ describe('Forum', () => {
             expect(commentNode.children.length).to.equal(1);
         });
 
+        it('should throw error if node is not found', () => {
+            let childComment = new Comment(2, 'content', author, new Date());
+            let childCommentNode = new CommentNode(childComment);
+            expect(() => commentNode.removeChild(childCommentNode)).to.throw('Child not found');
+        });
+
         it('should get children', () => {
             let childComment = new Comment(2, 'content', author, new Date());
             let childCommentNode = new CommentNode(childComment);
@@ -107,6 +184,16 @@ describe('Forum', () => {
             let parentCommentNode = new CommentNode(parentComment);
             childCommentNode.parent = parentCommentNode;
             expect(childCommentNode.parent).to.equal(parentCommentNode);
+        });
+
+        it('should log a commentNode to the console', () => {
+            commentNode = new CommentNode(comment);
+            let childComment = new Comment(2, 'content', author, new Date());
+            let childCommentNode = new CommentNode(childComment);
+            commentNode.addChild(childCommentNode);
+            commentNode.log();
+            expect(commentNode.children).to.have.length(1);
+            expect(commentNode.children[0]).to.equal(childCommentNode);
         });
     });
 
@@ -146,6 +233,28 @@ describe('Forum', () => {
         it('should get a comment from the tree', () => {
             commentTree = new CommentTree(commentNode);
             expect(commentTree.findNode(comment2)).to.equal(commentNode2);
+        });
+
+        it('should remove a comment from the tree', () => {
+            commentTree = new CommentTree(commentNode);
+            commentTree.removeComment(comment2);
+            expect(commentTree.root.children).to.have.length(1);
+        });
+
+        it('should throw error if comment is not found in tree while removing', () => {
+            commentTree = new CommentTree(commentNode);
+            expect(() => commentTree.removeComment(comment4)).to.throw('Comment not found'); 
+        });
+
+        it('should log a comment tree to the console', () => {
+            commentTree = new CommentTree(commentNode);
+            commentTree.log();
+            expect(commentTree.root).to.equal(commentNode);
+        });
+
+        it('should return null at the end of the three', () => {
+            commentTree = new CommentTree(commentNode);
+            expect(commentTree.findNode(comment4)).to.equal(null);
         });
     });
 });

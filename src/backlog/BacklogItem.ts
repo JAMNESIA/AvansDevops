@@ -59,9 +59,12 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     
     public isDone() : boolean{
         let bool = true; 
-        this._activities.forEach(activity => {
-            if(!activity.done) bool = false;
-        });
+        
+        for(let i = 0; i < this._activities.length; i++){
+            if(!this._activities[i].done){
+                bool = false;
+            }
+        }
 
         return bool; 
     }

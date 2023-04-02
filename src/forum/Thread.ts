@@ -31,6 +31,39 @@ export class Thread {
         }
     }
 
+    public getId(): number {
+        return this._id;
+    }
+
+    public getTitle(): string {
+        return this._title;
+    }
+
+    public setTitle(title: string): void {
+        this._title = title;
+    }
+
+    public getDescription(): string {
+        return this._description;
+    }
+
+    public setDescription(description: string): void {
+        this._description = description;
+    }
+
+    public getBacklogItem(): BacklogItem {
+        return this._backlogItem;
+    }
+
+    public getOriginalPoster(): Account {
+        return this._originalPoster;
+    }
+
+    public getComments(): CommentTree {
+        return this._comments;
+    }
+
+
     public addComment(comment: Comment): void {
         if(!(this._backlogItem.getState() instanceof DoneState)){
             this._comments.addComment(comment);

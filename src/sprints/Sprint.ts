@@ -102,10 +102,6 @@ export class Sprint {
         this._pipelineManager = pipelineManager;
     }
 
-    public set state(state: ISprintState) {
-        this._state = state;
-    }
-
     public setState(state: ISprintState): void {
         this._state = state;
     }
@@ -127,8 +123,10 @@ export class Sprint {
     }   
 
     public addMember(member: Account): void {
-        this._sprintMembers.includes(member) 
-            ? null 
-            : this._sprintMembers.push(member);
+        if (!this._sprintMembers.includes(member)) {
+            this._sprintMembers.push(member);
+        }else{
+            throw new Error("Member already exists");
+        }
     }
 }

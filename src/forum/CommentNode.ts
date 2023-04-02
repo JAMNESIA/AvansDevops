@@ -46,6 +46,8 @@ export class CommentNode {
         let index = this._children.indexOf(child);
         if (index > -1) {
             this._children.splice(index, 1);
+        }else{
+            throw new Error('Child not found');
         }
     }
 
