@@ -2,7 +2,9 @@ import { Account } from "../account/Account";
 import { Activity } from "./Activity";
 import { IBacklogItemState } from "./interfaces/IBacklogItemState";
 import { ToDoState } from "./states/ToDoState";
+import { ConcreteNotifier } from "../notification/ConcreteNotifier";
 import { SlackNotifier } from "../notification/SlackNotifier";
+import { MailNotifier } from "../notification/MailNotifier";
 export class BacklogItem extends Activity implements IBacklogItemState {
     //extends activitiy? 
 
@@ -83,6 +85,14 @@ export class BacklogItem extends Activity implements IBacklogItemState {
     }
 
     public setReadyForTesting() : void{
+        this.assignees.forEach(assignee => {
+            let notifier = new ConcreteNotifier(assignee.name);
+            let slackNotifier = new SlackNotifier(notifier, assignee.slack);
+            let emailNotifier = new MailNotifier(slackNotifier, assignee.email);
+
+            emailNotifier.notify("Backlog item is ready for testing");
+        });   
+
         this._state.setReadyForTesting();
     }
 
