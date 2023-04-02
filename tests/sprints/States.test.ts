@@ -17,6 +17,18 @@ describe('Sprint States', () => {
         scrumMaster
     });
 
+    const sprint2 = new Sprint({
+        type: "REVIEW",
+        name: "name",
+        scrumMaster
+    });
+
+    const sprint3 = new Sprint({
+        type: "RELEASE",
+        name: "name",
+        scrumMaster
+    });
+
     // InitialState
     // InProgressState
     // FinishedState
@@ -63,6 +75,12 @@ describe('Sprint States', () => {
         it('should throw an error when trying to change from initial state to release cancelled state', () => {
             const initialState = new InitialState(sprint);
             expect(() => initialState.changeToReleaseCancelledState()).to.throw('Can\'t change from initial state to release cancelled state');
+        });
+
+        it('should throw an error when trying to change from initial state to in progress state with no pipeline manager', () => {
+            sprint3.setPipelineManager(null);
+            const initialState = new InitialState(sprint3);
+            expect(() => initialState.changeToInProgressState()).to.throw('Can\'t change to in progress state without a pipeline manager');
         });
     });
 
@@ -152,6 +170,16 @@ describe('Sprint States', () => {
             const finishedState = new FinishedState(sprint);
             finishedState.changeToReleasingState();
             expect(sprint.getState()).to.be.an.instanceof(ReleasingState);
+        });
+
+        it('should throw error when trying to change state to ReleasingState but sprint is not release type', () => {
+            const finishedState = new FinishedState(sprint2);
+            expect(() => finishedState.changeToReleasingState()).to.throw('Can\'t change from finished to releasing');
+        });
+
+        it('should throw error when trying to change state to changeToReleaseCancelledState but sprint is not release type' , () => {
+            const finishedState = new FinishedState(sprint2);
+            expect(() => finishedState.changeToReleaseCancelledState()).to.throw('Can\'t change from finished to release cancelled');
         });
     });
 

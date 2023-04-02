@@ -28,5 +28,4 @@ export class CompositeComponent implements Component {
     public acceptVisitor(visitor: Visitor): void {
         this._components.forEach(component => component.acceptVisitor(visitor));
     }
-
 }
