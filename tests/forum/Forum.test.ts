@@ -108,6 +108,16 @@ describe('Forum', () => {
             childCommentNode.parent = parentCommentNode;
             expect(childCommentNode.parent).to.equal(parentCommentNode);
         });
+
+        it('should log a commentNode to the console', () => {
+            commentNode = new CommentNode(comment);
+            let childComment = new Comment(2, 'content', author, new Date());
+            let childCommentNode = new CommentNode(childComment);
+            commentNode.addChild(childCommentNode);
+            commentNode.log();
+            expect(commentNode.children).to.have.length(1);
+            expect(commentNode.children[0]).to.equal(childCommentNode);
+        });
     });
 
     describe('CommentTree', () => {
