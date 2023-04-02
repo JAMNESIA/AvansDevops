@@ -1,24 +1,8 @@
-import { INotifier } from "./INotifier";
-import { MailLibrary } from "./MailLibrary";
+import { NotificationDecorator } from "./NotificationDecotrator";
 
-export class MailNotifier implements INotifier {
-    private mailLibrary: MailLibrary;
+export class MailNotifier extends NotificationDecorator {
 
-    constructor(mailLibrary: MailLibrary) {
-        this.mailLibrary = mailLibrary;
-    }
-
-    notify(message: string): void {
-        if (!this.mailLibrary) {
-            console.log("No mail library configured");
-            return;
-        }
-
-        if (!message || message.length === 0) {
-            console.log("No message provided");
-            return;
-        }
-
-        this.mailLibrary.sendMail(message);
+    notify(message: string): string {
+        return `Sending email message: ${super.notify(message)}`;
     }
 }

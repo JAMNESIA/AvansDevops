@@ -2,6 +2,7 @@ import { Account } from "../account/Account";
 import { Activity } from "./Activity";
 import { IBacklogItemState } from "./interfaces/IBacklogItemState";
 import { ToDoState } from "./states/ToDoState";
+import { SlackNotifier } from "../notification/SlackNotifier";
 export class BacklogItem extends Activity implements IBacklogItemState {
     //extends activitiy? 
 
